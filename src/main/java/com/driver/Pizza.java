@@ -8,6 +8,7 @@ public class Pizza {
     private int addExtraCheesePrice;
     private int addExtraToppingPrice;
     private int takeAwayPrice;
+    private int total;
 
 
 
@@ -17,19 +18,22 @@ public class Pizza {
         if(isVeg == true)
         {
             price = 300;
+            total = price;
         }
         else {
             price = 400;
+            total = price;
         }
     }
 
     public int getPrice(){
-        return this.price;
+        return this.total;
     }
 
     public void addExtraCheese(){
         // your code goes here
         addExtraCheesePrice += 80;
+        total += addExtraCheesePrice;
     }
 
     public void addExtraToppings(){
@@ -37,9 +41,11 @@ public class Pizza {
         if(isVeg==true)
         {
             addExtraToppingPrice += 70;
+            total += addExtraToppingPrice;
         }
         else {
             addExtraToppingPrice += 120;
+            total += addExtraToppingPrice;
         }
 
     }
@@ -47,15 +53,15 @@ public class Pizza {
     public void addTakeaway(){
         // your code goes here
          takeAwayPrice += 20;
+         total += takeAwayPrice;
     }
 
     public String getBill(){
         // your code goes here
-        int total = price+addExtraCheesePrice+addExtraToppingPrice+takeAwayPrice;
         bill = "Base Price Of The Pizza: "+price+"\n"+"Extra Cheese Added: "+addExtraCheesePrice+"\n"
                 + "Extra Toppings Added: "+addExtraToppingPrice+"\n"
                 + "Paperbag Added: "+takeAwayPrice+"\n"
-                + "Total Price: "+total;
+                + "Total Price: "+total+"\n";
         return this.bill;
     }
 }
