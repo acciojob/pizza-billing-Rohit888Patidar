@@ -75,7 +75,7 @@ public class Pizza {
 
     public String getBill(){
         // your code goes here
-        bill = "Extra Cheese Added: "+addExtraCheesePrice+"\n"
+        bill += "Extra Cheese Added: "+addExtraCheesePrice+"\n"
             +"Extra Toppings Added: "+addExtraToppingPrice+"\n"
             +"Paperbag Added: "+addTakeAwayPrice+"\n" +
                 "Total Price: "+price+"\n";
